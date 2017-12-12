@@ -17,6 +17,7 @@ class cs_script
 end class
 
 
+
 'This variable must always start at zero. It figures out how many buttons it needs to process and create.
 script_num = 0
 
@@ -188,6 +189,15 @@ cs_scripts_array(script_num).scriptwriter		= ""
 script_num = script_num + 1
 ReDim Preserve cs_scripts_array(script_num)
 SET cs_scripts_array(script_num) = NEW cs_script
+cs_scripts_array(script_num).script_name		= "Refer to Mod"
+cs_scripts_array(script_num).category			= "actions"
+cs_scripts_array(script_num).description		= "Starts REAM and sends docs to include employer verifs."
+cs_scripts_array(script_num).release_date		= #03/28/2017#
+cs_scripts_array(script_num).scriptwriter		= ""
+
+script_num = script_num + 1
+ReDim Preserve cs_scripts_array(script_num)
+SET cs_scripts_array(script_num) = NEW cs_script
 cs_scripts_array(script_num).script_name		= "Returned Mail"
 cs_scripts_array(script_num).category			= "actions"
 cs_scripts_array(script_num).description		= "Updates address to new or unknown, and creates CAAD note."
@@ -239,6 +249,15 @@ cs_scripts_array(script_num).script_name		= "Case Transfer"
 cs_scripts_array(script_num).category			= "bulk"
 cs_scripts_array(script_num).description		= "Gives the user the ability to quickly transfer mulitple cases."
 cs_scripts_array(script_num).release_date		= #01/01/2000#
+cs_scripts_array(script_num).scriptwriter		= ""
+
+script_num = script_num + 1
+ReDim Preserve cs_scripts_array(script_num)
+SET cs_scripts_array(script_num) = NEW cs_script
+cs_scripts_array(script_num).script_name		= "E0002 No-Pay-To-Spreadsheet"
+cs_scripts_array(script_num).category			= "bulk"
+cs_scripts_array(script_num).description		= "Reviews all E0002 worklists and copies the Worklists Date, Case Number, NCP Name, File Location, Last NCP Contact in 90 days, NCP's Phone Number into a spreadsheet and purges the worklists"
+cs_scripts_array(script_num).release_date		= #03/28/2017#
 cs_scripts_array(script_num).scriptwriter		= ""
 
 script_num = script_num + 1
@@ -497,6 +516,15 @@ cs_scripts_array(script_num).scriptwriter		= ""
 script_num = script_num + 1
 ReDim Preserve cs_scripts_array(script_num)
 SET cs_scripts_array(script_num) = NEW cs_script
+cs_scripts_array(script_num).script_name		= "METS Referral Attempted"
+cs_scripts_array(script_num).category			= "notes"
+cs_scripts_array(script_num).description		= "CAAD note when a METS referral is attempted."
+cs_scripts_array(script_num).release_date		= #11/06/2017#
+cs_scripts_array(script_num).scriptwriter		= ""
+
+script_num = script_num + 1
+ReDim Preserve cs_scripts_array(script_num)
+SET cs_scripts_array(script_num) = NEW cs_script
 cs_scripts_array(script_num).script_name		= "MES Financial Docs Sent"
 cs_scripts_array(script_num).category			= "notes"
 cs_scripts_array(script_num).description		= "Creates CAAD note for recording documents sent to parties."
@@ -577,6 +605,15 @@ cs_scripts_array(script_num).scriptwriter		= "Robert Fewins-Kalb"
 script_num = script_num + 1
 ReDim Preserve cs_scripts_array(script_num)
 SET cs_scripts_array(script_num) = NEW cs_script
+cs_scripts_array(script_num).script_name		= "Favorites List"
+cs_scripts_array(script_num).category			= "utilities"
+cs_scripts_array(script_num).description		= "A user-customizable list of favorite scripts."
+cs_scripts_array(script_num).release_date		= #04/04/2016#
+cs_scripts_array(script_num).scriptwriter		= "Veronica Cary, Robert Fewins-Kalb"
+
+script_num = script_num + 1
+ReDim Preserve cs_scripts_array(script_num)
+SET cs_scripts_array(script_num) = NEW cs_script
 cs_scripts_array(script_num).script_name		= "MAXIS Screen Finder"
 cs_scripts_array(script_num).category			= "utilities"
 cs_scripts_array(script_num).description		= "Displays a list of MAXIS screens you can select."
@@ -618,3 +655,7 @@ cs_scripts_array(script_num).category			= "utilities"
 cs_scripts_array(script_num).description		= "Allows you to maintain a default signature that loads in all scripts."
 cs_scripts_array(script_num).release_date		= #01/01/2000#
 cs_scripts_array(script_num).scriptwriter		= "Robert Fewins-Kalb"
+
+' -----------------------------
+' This allows the favorites-list script to skip re-reading this file. This variable is used in that script.
+list_of_scripts_ran = true
